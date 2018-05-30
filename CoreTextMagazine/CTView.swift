@@ -19,7 +19,7 @@ class CTView: UIView {
         self.attrString = attrString
     }
 
-   //1
+   //1 - draw function
     override func draw(_ rect: CGRect) {
         //2 unwrap current graphic context
         guard let context = UIGraphicsGetCurrentContext() else { return }
