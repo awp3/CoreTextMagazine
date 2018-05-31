@@ -78,13 +78,13 @@
 				CE97BDBF20BD51F8007529CA /* zombieMagMaterials */,
 				CE97BDA820BD4D4C007529CA /* AppDelegate.swift */,
 				CE97BDBD20BD4DC8007529CA /* CTView.swift */,
+				CEFA705F20BFFB1200CB890B /* CTSettings.swift */,
 				CEFA705D20BFF8C500CB890B /* CTColumnView.swift */,
 				CE97BDAA20BD4D4C007529CA /* ViewController.swift */,
 				CE97BDAC20BD4D4C007529CA /* Main.storyboard */,
 				CE97BDAF20BD4D4D007529CA /* Assets.xcassets */,
 				CE97BDB120BD4D4D007529CA /* LaunchScreen.storyboard */,
 				CE97BDB420BD4D4D007529CA /* Info.plist */,
-				CEFA705F20BFFB1200CB890B /* CTSettings.swift */,
 			);
 			path = CoreTextMagazine;
 			sourceTree = "<group>";
