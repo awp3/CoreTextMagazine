@@ -9,7 +9,7 @@
 import UIKit
 import CoreText
 
-class CTView: UIView {
+class CTView: UIScrollView {
 
     // MARK: - Properties
     var attrString : NSAttributedString!

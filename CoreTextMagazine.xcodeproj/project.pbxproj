@@ -19,6 +19,8 @@
 		CE97BDC620BD51F8007529CA /* zombie2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE97BDC220BD51F8007529CA /* zombie2.jpg */; };
 		CE97BDC720BD51F8007529CA /* zombie3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE97BDC320BD51F8007529CA /* zombie3.jpg */; };
 		CE97BDC920BD524A007529CA /* MarkupParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE97BDC820BD524A007529CA /* MarkupParser.swift */; };
+		CEFA705E20BFF8C500CB890B /* CTColumnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA705D20BFF8C500CB890B /* CTColumnView.swift */; };
+		CEFA706020BFFB1200CB890B /* CTSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFA705F20BFFB1200CB890B /* CTSettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		CE97BDC220BD51F8007529CA /* zombie2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = zombie2.jpg; sourceTree = "<group>"; };
 		CE97BDC320BD51F8007529CA /* zombie3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = zombie3.jpg; sourceTree = "<group>"; };
 		CE97BDC820BD524A007529CA /* MarkupParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkupParser.swift; sourceTree = "<group>"; };
+		CEFA705D20BFF8C500CB890B /* CTColumnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTColumnView.swift; sourceTree = "<group>"; };
+		CEFA705F20BFFB1200CB890B /* CTSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTSettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,11 +78,13 @@
 				CE97BDBF20BD51F8007529CA /* zombieMagMaterials */,
 				CE97BDA820BD4D4C007529CA /* AppDelegate.swift */,
 				CE97BDBD20BD4DC8007529CA /* CTView.swift */,
+				CEFA705D20BFF8C500CB890B /* CTColumnView.swift */,
 				CE97BDAA20BD4D4C007529CA /* ViewController.swift */,
 				CE97BDAC20BD4D4C007529CA /* Main.storyboard */,
 				CE97BDAF20BD4D4D007529CA /* Assets.xcassets */,
 				CE97BDB120BD4D4D007529CA /* LaunchScreen.storyboard */,
 				CE97BDB420BD4D4D007529CA /* Info.plist */,
+				CEFA705F20BFFB1200CB890B /* CTSettings.swift */,
 			);
 			path = CoreTextMagazine;
 			sourceTree = "<group>";
@@ -180,7 +186,9 @@
 				CE97BDAB20BD4D4C007529CA /* ViewController.swift in Sources */,
 				CE97BDBE20BD4DC8007529CA /* CTView.swift in Sources */,
 				CE97BDC920BD524A007529CA /* MarkupParser.swift in Sources */,
+				CEFA706020BFFB1200CB890B /* CTSettings.swift in Sources */,
 				CE97BDA920BD4D4C007529CA /* AppDelegate.swift in Sources */,
+				CEFA705E20BFF8C500CB890B /* CTColumnView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
