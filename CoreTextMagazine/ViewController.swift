@@ -21,7 +21,8 @@ class ViewController: UIViewController {
 
             let parser = MarkupParser()
             parser.parseMarkup(text)
-            (view as? CTView)?.importAttrString(parser.attrString)
+            (view as? CTView)?.buildFrames(withAttrString: parser.attrString,
+                                           andImages: parser.images)
         } catch _ {
             
         }
