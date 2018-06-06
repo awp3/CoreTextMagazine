@@ -10,10 +10,13 @@ import UIKit
 import CoreText
 
 class CTView: UIScrollView {
+    // MARK: - Properties
+    var imageIndex: Int!
 
     // 1
     func buildFrames(withAttrString attrString: NSAttributedString,
                      andImages images: [[String: Any]]) {
+        imageIndex = 0
         // 2
         isPagingEnabled = true
         // 3
@@ -48,6 +51,9 @@ class CTView: UIScrollView {
                                                    nil)
             // 2
             let column = CTColumnView(frame: columnFrame, ctframe: ctframe)
+            if images.count > imageIndex {
+                attachImagesWithFrame(images, ctframe: ctframe, margin: settings.margins, columnView: column)
+            }
             pageView.addSubview(column)
             // 3
             let frameRange = CTFrameGetVisibleStringRange(ctframe)
@@ -60,4 +66,59 @@ class CTView: UIScrollView {
                              height: bounds.size.height)
     }
 
+    func attachImagesWithFrame(_ images: [[String: Any]],
+                               ctframe: CTFrame,
+                               margin: CGFloat,
+                               columnView: CTColumnView) {
+        //1
+        let lines = CTFrameGetLines(ctframe) as NSArray
+        //2
+        var origins = [CGPoint](repeating: .zero, count: lines.count)
+        CTFrameGetLineOrigins(ctframe, CFRangeMake(0, 0), &origins)
+        //3
+        var nextImage = images[imageIndex]
+        guard var imgLocation = nextImage["location"] as? Int else {
+            return
+        }
+        //4
+        for lineIndex in 0..<lines.count {
+            let line = lines[lineIndex] as! CTLine
+            //5
+            if let glyphRuns = CTLineGetGlyphRuns(line) as? [CTRun],
+            let imageFilename = nextImage["filename"] as? String,
+                let img = UIImage(named: imageFilename) {
+                for run in glyphRuns {
+                    //1
+                    let runRange = CTRunGetStringRange(run)
+                    if runRange.location > imgLocation || runRange.location + runRange.length <= imgLocation {
+                        continue
+                    }
+                    //2
+                    var imgBounds : CGRect = .zero
+                    var ascent : CGFloat = 0
+                    imgBounds.size.width = CGFloat(CTRunGetTypographicBounds(run, CFRangeMake(0, 0), &ascent, nil, nil))
+                    imgBounds.size.height = ascent
+                    //3
+                    let xOffset = CTLineGetOffsetForStringIndex(line, CTRunGetStringRange(run).location, nil)
+                    imgBounds.origin.x = origins[lineIndex].x + xOffset
+                    imgBounds.origin.y = origins[lineIndex].y
+                    //4
+                    columnView.images += [(image : img, frame : imgBounds)]
+                    //5
+                    imageIndex! += 1
+                    if imageIndex < images.count {
+                        nextImage = images[imageIndex]
+                        imgLocation = (nextImage["location"] as AnyObject).intValue
+                    }
+                }
+            }
+        }
+    }
+
 }
+
+
+
+
+
+
